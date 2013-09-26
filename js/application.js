@@ -1,5 +1,6 @@
 //create map
 function intializeMap(lat,long){
+	
         var mapOptions = {
           center: new google.maps.LatLng(lat,long),
           zoom: 14,
@@ -7,6 +8,11 @@ function intializeMap(lat,long){
         };
 		
         var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+		var marker = new google.maps.Marker({
+		  position: new google.maps.LatLng(lat,long),
+		  map: map,
+		  title: 'My Location'
+  });
 		//return map;
 }
 var onSuccess = function(position) {
