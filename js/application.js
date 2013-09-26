@@ -17,6 +17,7 @@ function intializeMap(lat,long){
 }
 var onSuccess = function(position) {
 	//alert(position.coords.latitude);
+	
 	var t = intializeMap(position.coords.latitude, position.coords.longitude);
 	google.maps.event.addDomListener(window, 'load', t);
 };
@@ -28,13 +29,14 @@ function onError(error) {
           'message: ' + error.message + '\n');
 }
 
-function updateMyLocation(){
-	 setInterval(function() {
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);
-	 },30000);
+function myLocation(){
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
-updateMyLocation();
+myLocation();
+setInterval(function() {
+		myLocation()
+	},30000);
 
 
 
