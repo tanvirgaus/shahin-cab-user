@@ -27,7 +27,15 @@ function onError(error) {
     alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+function updateMyLocation(){
+	 setInterval(function() {
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	 },30000);
+}
+
+updateMyLocation();
+
 
 
 /*
