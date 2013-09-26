@@ -1,67 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-    	<meta charset="UTF-8">
-        <!-- css -->
-        <link rel="stylesheet" type="text/css" href="css/jquery-mobile.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+<html><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <!-- css -->
+    <link href="css/jquery-mobile.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+	<!-- InstanceBeginEditable name="addCss" -->
         
-        <script>
-		var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
-};
+    <!-- InstanceEndEditable -->
+    
+    <!-- Js -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-mobile.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="js/application.js"></script>
+	<!-- InstanceBeginEditable name="addJs" -->
+   
 
-// onError Callback receives a PositionError object
-//
-function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
-}
-
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
-</script>
-    </head>
-
+    <!-- InstanceEndEditable -->
+</head>
     <body>
-    	<div data-role="page">
-    
-            <!--Header -->
-            <header data-role="header" data-position="fixed">
-                Header goes here
-            </header>
-        	<!-- page body start here -->
+    <div data-role="page">
+    	<header data-role="header" data-position="fixed">
+    	<!-- InstanceBeginEditable name="headerEdit" -->
+    		Header
+		<!-- InstanceEndEditable -->
+        </header>
+        <div data-role="content">
+    	<!-- InstanceBeginEditable name="contentEdit" -->
         	
-            <div data-role="content">
-            	<div>
-		         page body	
-                 </div>
-                 <div>
-                 changes
-                 </div>
-            </div>
-            
-        
-        
-        
-        
-            <!--Footer -->
-            <footer data-role="footer" data-position="fixed">
-             footer
-            </footer>
+            	<div id="map-canvas" style="position:absolute !important; height:100%;"> </div>
+           
+        	
+		<!-- InstanceEndEditable -->
         </div>
-    
-    
-    	<!-- Js -->
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery-mobile.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/application.js"></script>
+        <div data-role="footer"  data-position="fixed" >
+		<!-- InstanceBeginEditable name="footerEdit" -->
+			footer goes here
+		<!-- InstanceEndEditable -->
+        
+        </div>
+    </div>
     </body>
-</html>
+<!-- InstanceEnd --></html>
