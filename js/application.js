@@ -32,13 +32,19 @@ function onError(error) {
 function myLocation(){
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
+function loadMarker() {
+	var lat = parseFloat(document.getElementById('markerLat').value);
+	var lng = parseFloat(document.getElementById('markerLng').value);
+	var newLatLng = new google.maps.LatLng(lat, lng);
+	marker.setPosition(newLatLng);
+}
+
+
+
 
 myLocation();
-setInterval(function() {
-		myLocation()
-	},30000);
 
-
+setInterval(function() { loadMarker(); },5000);
 
 /*
 function deviceready() {
