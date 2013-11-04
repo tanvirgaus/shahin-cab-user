@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="../css/customer.min.css" />
+  	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.3.2.min.css" /> 
+    <link rel="stylesheet" href="../css/style.css" /> 
+	<!-- TemplateBeginEditable name="Title" -->
+		<title>jQuery Mobile page</title>
+  	<!-- TemplateEndEditable -->
+    
+     
+    <!-- All Js -->
+    <script src="../js/jquery.js"></script> 
+    <script src="../js/jquery.mobile-1.3.2.js"></script>
+    <script src="../cordova.js"></script>
+    <!-- TemplateBeginEditable name="Js" -->
+    
+	<script src="../js/application.js"></script> 
+  	<!-- TemplateEndEditable -->
+    
+    
+
+
+</head>
+
+<body> 
+	<div data-role="page">
+      	<div data-role="header" data-position="fixed" data-theme="b">
+        	<div class="container">
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<h1 class="logo">My Taxi</h1>
+						<h3 class="slogan">Find and hire</h3>
+					</div>
+					<div class="ui-block-c text-right">
+						<a href="#" class="help-line">Need Help ? 
+						<br>
+						Call at 000-0000</a>
+					</div>
+				</div>
+			</div>
+        </div>
+        <!-- TemplateBeginEditable name="data" -->
+   		
+            <div data-role="content">
+              
+            </div>
+        <!-- TemplateEndEditable -->
+        
+        <div data-role="footer" data-position="fixed">
+    		<div class="ui-grid-b">
+            	<div class="ui-block-a" data-theme="a">
+                	<a href="../signup.html" data-role="button" data-icon="star" data-iconpos="bottom" data-theme="a">Sign Up</a>
+                </div>
+                <div class="ui-block-b" data-theme="a">
+                	<a href="../signin.html" data-role="button" data-icon="forward" data-iconpos="bottom" data-theme="b">Sign In</a>
+                </div>
+                 <div class="ui-block-c" data-theme="a">
+                	<a href="../help.html" data-role="button" data-icon="info" data-iconpos="bottom" data-theme="c">Help</a>
+                </div>
+            </div>
+		</div>
+        
+	</div>
+
+</body>
+</html>
