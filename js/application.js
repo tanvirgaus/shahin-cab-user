@@ -1,79 +1,55 @@
-//create map
-var map,
-	currentPositionMarker,
-	mapCenter = new google.maps.LatLng(40.700683, -73.925972),
-	map;
+var map;
+  var marker;
+  var newLatlng;
+  var i = 0;
 
-function initializeMap()
-{
-	map = new google.maps.Map(document.getElementById('map-canvas'), {
-	   zoom: 13,
-	   center: mapCenter,
-	   mapTypeId: google.maps.MapTypeId.ROADMAP
-	 });
+  //here i create a map centered on 0,0
+  function initialize() {
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var chicago = new google.maps.LatLng(0,0);
+    var mapOptions = {
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: chicago
+    }
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    directionsDisplay.setMap(map);
+
+    updatePos();
+
+  }
+
+
+//here I set my marker (if i==0 -> first run)
+function updatePos(){
+
+var options = {
+    timeout: 3000, 
+	enableHighAccuracy: true,
+	maximumAge: 0
+};
+var myUpdatedPos = navigator.geolocation.watchPosition(onSuccess, onError, options);
+
+function onSuccess(position) {
+
+    if (i==0){
+        marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                        map: map,
+                        animation: google.maps.Animation.DROP
+                    });
+    }
+    i++;
+
+    //here I update the position
+    newLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    marker.setPosition(newLatlng);
 }
 
-function locError(error) {
-	// the current position could not be located
-	alert("The current position could not be found!");
+// onError Callback receives a PositionError object
+//
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+        'message: ' + error.message + '\n');
+    }
 }
-
-function setCurrentPosition(pos) {
-	currentPositionMarker = new google.maps.Marker({
-		map: map,
-		position: new google.maps.LatLng(
-			pos.coords.latitude,
-			pos.coords.longitude
-		),
-		title: "Current Position"
-	});
-	map.panTo(new google.maps.LatLng(
-			pos.coords.latitude,
-			pos.coords.longitude
-		));
-}
-
-function displayAndWatch(position) {
-	// set current position
-	setCurrentPosition(position);
-	// watch position
-	watchCurrentPosition();
-}
-
-function watchCurrentPosition() {
-	var positionTimer = navigator.geolocation.watchPosition(
-		function (position) {
-			setMarkerPosition(
-				currentPositionMarker,
-				position
-			);
-		},
-		'',
-		{frequency: 3000}
-		
-		);
-}
-
-function setMarkerPosition(marker, position) {
-	marker.setPosition(
-		new google.maps.LatLng(
-			position.coords.latitude,
-			position.coords.longitude)
-	);
-}
-
-function initLocationProcedure() {
-	initializeMap();
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(displayAndWatch, locError);
-	} else {
-		alert("Your browser does not support the Geolocation API");
-	}
-}
-function getCurrentPositon(){
-//	navigator.geolocation.getCurrentPosition(geolocationSuccess,[geolocationError],geolocationOptions]);
-}
-
-$(document).ready(function() {
-	initLocationProcedure();
-});
