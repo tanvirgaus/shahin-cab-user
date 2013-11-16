@@ -41,13 +41,16 @@ function displayAndWatch(position) {
 }
 
 function watchCurrentPosition() {
+	var options = {timeout: 5000};
 	var positionTimer = navigator.geolocation.watchPosition(
 		function (position) {
 			setMarkerPosition(
 				currentPositionMarker,
 				position
 			);
-		});
+		}, function () {
+			alert('cannot update position');
+		}, options);
 }
 
 function setMarkerPosition(marker, position) {
