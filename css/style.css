@@ -1,45 +1,9 @@
-body{
-	padding:0px;
-	margin:0px;
+html,body{
+	height:100% !important;
 }
-
-@import(http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Coda);
-* {
-	padding: 0px;
-	margin: 0px;
-	color: #333333 !important;
-	font-family: "Coda";
-	text-shadow :none !important;
-	font-size: 1em !important;
+#map-canvas{
+	width: 100%;
+	height:100%;
+	top: 0 !important;
+	left:0 !important;
 }
-/* text alings */
-.text-left{
-	text-align:left;
-}
-.text-center{
-	text-align:center;
-}
-.text-right{
-	text-align:right;
-}
-.container{
-	padding: 0 15px;
-}
-/*pages*/
-.ui-body-c, .ui-overlay-c{
-	background: #fff !important;
-}
-.logo{
-	font-size: 1.3em !important;
-	color: #fff !important;	
-}
-.slogan{
-	font-size: .8em !important;
-	color: #f2f2f2 !important;
-}
-.help-line{
-	color:#29ABE2 !important;
-}
-/*index*/
-
-

@@ -1,69 +1,43 @@
 <!DOCTYPE html>
-<html><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
-<head>
-  	<meta charset="utf-8" />
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="css/customer.min.css" />
-  	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" /> 
-    <link rel="stylesheet" href="css/style.css" /> 
-	<!-- InstanceBeginEditable name="Title" -->
-	<title>Index</title>
-  <!-- InstanceEndEditable -->
+<html><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <!-- css -->
+    <link href="css/jquery-mobile.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+	<!-- InstanceBeginEditable name="addCss" -->
+   	     
+    <!-- InstanceEndEditable -->
     
-     
-    <!-- All Js -->
-    <script src="js/jquery.js"></script> 
-    <script src="js/jquery.mobile-1.3.2.js"></script>
-    <script src="cordova.js"></script>
-    <!-- InstanceBeginEditable name="Js" -->
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&amp;sensor=true"></script>
-	<script src="js/application.js"></script> 
-  	<!-- InstanceEndEditable -->
+    <!-- Js -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-mobile.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
     
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="js/application.js"></script>
+	<!-- InstanceBeginEditable name="addJs" -->
     
-
-
+    <!-- InstanceEndEditable -->
 </head>
-
-<body> 
-	<div data-role="page">
-      	<div data-role="header" data-position="fixed" data-theme="b">
-        	<div class="container">
-				<div class="ui-grid-a">
-					<div class="ui-block-a">
-						<h1 class="logo">My Taxi</h1>
-						<h3 class="slogan">Find and hire</h3>
-					</div>
-					<div class="ui-block-c text-right">
-						<a href="#" class="help-line">Need Help ? 
-						<br>
-						Call at 000-0000</a>
-					</div>
-				</div>
-			</div>
+    <body>
+    <div data-role="page">
+    	<header data-role="header" data-position="fixed">
+    	<!-- InstanceBeginEditable name="headerEdit" -->
+    		<a href="map.html">Map</a>
+		<!-- InstanceEndEditable -->
+        </header>
+        <div data-role="content">
+    	<!-- InstanceBeginEditable name="contentEdit" -->
+        	<div id="map-canvas" style="position:absolute !important; height:100%;"> </div>
+		<!-- InstanceEndEditable -->
         </div>
-        <!-- InstanceBeginEditable name="data" -->
-   		
-            <div data-role="content">
-             	<div id="map-canvas" style="position:absolute !important; width:100%; height:100%;"></div>
-            </div>
-        <!-- InstanceEndEditable -->
+        <div data-role="footer"  data-position="fixed" >
+		<!-- InstanceBeginEditable name="footerEdit" -->
+			footer goes here
+		<!-- InstanceEndEditable -->
         
-        <div data-role="footer" data-position="fixed">
-    		<div class="ui-grid-b">
-            	<div class="ui-block-a" data-theme="a">
-                	<a href="signup.html" data-role="button" data-icon="star" data-iconpos="bottom" data-theme="a">Sign Up</a>
-                </div>
-                <div class="ui-block-b" data-theme="a">
-                	<a href="signin.html" data-role="button" data-icon="forward" data-iconpos="bottom" data-theme="b">Sign In</a>
-                </div>
-                 <div class="ui-block-c" data-theme="a">
-                	<a href="help.html" data-role="button" data-icon="info" data-iconpos="bottom" data-theme="c">Help</a>
-                </div>
-            </div>
-		</div>
-        
-	</div>
-
-</body>
+        </div>
+    </div>
+    </body>
 <!-- InstanceEnd --></html>
